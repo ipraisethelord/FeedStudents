@@ -86,8 +86,8 @@
   <div class="highlight">
     <strong>Daily Rice Needed:</strong><br>
     • 2.5 bags of rice (75 kg each) = 187.5 kg/day or 412.5 pounds/day<br>
-    • Cost: ₹9,375/day ≈ $110.30 USD/day<br>
-    • That’s $4.65 to feed 20 students for one day
+    • Cost: ₹9,375/day (₹50/kg and ₹85 = $1.00)≈ $110.30 USD/day<br>
+    • That’s $5.22 to feed 20 students for one day
   </div>
 
   <p>Your gift, no matter the size, will have an immediate impact. It is not just food; it is fuel for future pastors, evangelists, and servants of Christ. It's a tangible way to share the Gospel by providing for those who will carry it to others.</p>
@@ -111,9 +111,8 @@
 <script src="https://www.paypal.com/sdk/js?client-id=AS242uLSPOBFKpnRNCJbHl-71ARyAj9OWrUSljldaKa4LcXxhe-qLxFiX_47wCgLrx-Ja0kxXuwt99as&currency=USD"></script>
 
 <script>
-
-  paypal.Buttons({
-
+document.addEventListener("DOMContentLoaded", function () {
+paypal.Buttons({
     style: {
 
       layout: 'vertical',
@@ -134,8 +133,6 @@
 
       const amount = parseFloat(amountInput.value);
 
-
-
       if (isNaN(amount) || amount < 5) {
 
         alert("Please enter a valid donation amount of $5 or more.");
@@ -143,8 +140,6 @@
         return;
 
       }
-
-
 
       return actions.order.create({
 
@@ -175,6 +170,7 @@
     }
 
   }).render('#paypal-button-container');
+}
 
 </script>
 
@@ -184,4 +180,5 @@
 
 
 </html>
+
 
