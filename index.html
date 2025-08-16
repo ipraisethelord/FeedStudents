@@ -57,33 +57,34 @@
     <h2>Donate Now</h2>
     <div id="paypal-button-container"></div>
   </div>
-
+<div style="margin-bottom: 20px;">
+  <label for="donation-amount"><strong>Enter your donation amount (minimum $5):</strong></label><br>
+  <input type="number" id="donation-amount" value="10.00" min="5" step="0.01" style="padding: 8px; width: 150px;">
+</div>
   <!-- PayPal SDK and Button -->
- <script src="https://www.paypal.com/sdk/js?client-id=AS242uLSPOBFKpnRNCJbHl-71ARyAj9OWrUSljldaKa4LcXxhe-qLxFiX_47wCgLrx-Ja0kxXuwt99as&currency=USD"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AS242uLSPOBFKpnRNCJbHl-71ARyAj9OWrUSljldaKa4LcXxhe-qLxFiX_47wCgLrx-Ja0kxXuwt99as&currency=USD"></script>
 <script>
   paypal.Buttons({
     style: {
       layout: 'vertical',
-      color:  'gold',
+      color:  'blue',
       shape:  'rect',
       label:  'donate',
       tagline: false
     },
-    onClick: function(data, actions) {
-      const amount = prompt("Enter your donation amount (minimum $5):", "10.00");
-      if (!amount || isNaN(amount) || parseFloat(amount) < 5) {
-        alert("Please enter a valid amount of $5 or more.");
-        return actions.reject();
-      }
-      // Store the valid amount for use in createOrder
-      data.customAmount = amount;
-      return actions.resolve();
-    },
     createOrder: function(data, actions) {
+      const amountInput = document.getElementById('donation-amount');
+      const amount = parseFloat(amountInput.value);
+
+      if (isNaN(amount) || amount < 5) {
+        alert("Please enter a valid donation amount of $5 or more.");
+        return;
+      }
+
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: data.customAmount || '10.00'
+            value: amount.toFixed(2)
           },
           description: 'Rice Fund: Feed future ministers at SIBBC&S'
         }]
@@ -91,7 +92,7 @@
     },
     onApprove: function(data, actions) {
       return actions.order.capture().then(function(details) {
-        alert('Thank you, ' + details.payer.name.given_name + '! Your donation was successful.');
+        alert('Thank you, ' + details.payer.name.given_name + '! Your donation of $' + details.purchase_units[0].amount.value + ' was successful.');
       });
     }
   }).render('#paypal-button-container');
@@ -100,4 +101,5 @@
 </body>
 
 </html>
+
 
