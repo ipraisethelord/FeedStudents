@@ -14,21 +14,15 @@
 
   <style>
 
-    body {
-
-      font-family: Arial, sans-serif;
-
-      margin: 0;
-
-      padding: 20px;
-
-      background-color: #fefefe;
-
-      color: #333;
-
-      line-height: 1.6;
-
-    }
+   body {
+  font-family: Arial, sans-serif;
+  font-size: 18px; /* Increased from default */
+  margin: 0;
+  padding: 20px;
+  background-color: #fefefe;
+  color: #333;
+  line-height: 1.8;
+}
 
     h1 {
 
@@ -55,75 +49,58 @@
       text-align: center;
 
     }
+    
 .donation-container {
   text-align: center;
   margin: 30px auto;
+}
+.donation-container input {
+  padding: 12px;
+  font-size: 18px;
+  width: 180px;
+  margin-top: 10px;
 }
 .paypal-wrapper {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-.donation-container input {
-  padding: 8px;
-  width: 150px;
-  margin-top: 10px;
+#paypal-button-container {
+  transform: scale(1.2); /* Increase size by 20% */
+  transform-origin: top center;
+  margin-top: 20px;
 }
   </style>
 
 </head>
 
 <body>
+ <h1>Feed the Future: Help Provide Rice for SIBBC&S Students</h1>
 
+  <p>At South India Baptist Bible College & Seminary (SIBBC&S), 423 students are answering God’s call to ministry. Many come from the poorest regions of Northeast India or as refugees from Myanmar. They face persecution and hardship, yet they have chosen to pursue their faith, trusting God to provide. They understand they won't become rich by following God's call, yet they have committed their lives to spreading the Gospel.</p>
 
+  <p>SIBBC&S is a ministry—not a business—committed to training Christian workers to faithfully proclaim the Gospel and serve in ministry. To keep biblical theological education accessible, tuition is just set $680 per year. Yet even this bare amount is beyond reach for many students, most of whom come from deeply impoverished regions. To help them pursue their calling, SIBBC&S offers campus jobs—cleaning, cooking, gardening—so students can work toward their tuition. In addition, the school provides free housing and meals, a daily act of grace that has become a significant financial burden.</p>
 
-  <h1>Feed the Future: Help Provide Rice for SIBBC&S Students</h1>
+  <p>Every single day, these students receive three meals, fueling their bodies as they grow in their faith. They are profoundly grateful, knowing their food is a gift from the generosity of others.</p>
 
+  <div class="highlight">
+    <strong>Daily Rice Needed:</strong><br>
+    • 2.5 bags of rice (75 kg each) = 187.5 kg/day or 412.5 pounds/day<br>
+    • Cost: ₹9,375/day ≈ $110.30 USD/day<br>
+    • That’s $4.65 to feed 20 students for one day
+  </div>
 
+  <p>Your gift, no matter the size, will have an immediate impact. It is not just food; it is fuel for future pastors, evangelists, and servants of Christ. It's a tangible way to share the Gospel by providing for those who will carry it to others.</p>
 
-  <p>At South India Baptist Bible College & Seminary (SIBBC&S), 423 students are answering God’s call to ministry. Many come from the poorest regions of Northeast India or as refugees from Myanmar. They face persecution and hardship, yet they have chosen to pursue their faith, trusting God to provide. They understand they won't become rich by following God's call, yet they have committed their lives to spreading the Gospel.</p>
+  <p>Will you consider skipping one snack, one coffee, or one meal to feed a student who hungers for both the Word and daily bread?</p>
 
-
-
-  <p>SIBBC&S is a ministry—not a business—committed to training Christian workers to faithfully proclaim the Gospel and serve in ministry. To keep biblical theological education accessible, tuition is just set $680 per year. Yet even this bare amount is beyond reach for many students, most of whom come from deeply impoverished regions. To help them pursue their calling, SIBBC&S offers campus jobs—cleaning, cooking, gardening—so students can work toward their tuition. In addition, the school provides free housing and meals, a daily act of grace that has become a significant financial burden.</p>
-
-
-
-  <p>Every single day, these students receive three meals, fueling their bodies as they grow in their faith. They are profoundly grateful, knowing their food is a gift from the generosity of others.</p>
-
-
-
-  <div class="highlight">
-
-    <strong>Daily Rice Needed:</strong><br>
-
-    • 2.5 bags of rice (75 kg each) = 187.5 kg/day or 412.5 pounds/day<br>
-
-    • Cost: ₹9,375/day ≈ $110.30 USD/day<br>
-
-    • That’s $4.65 to feed 20 students for one day
-
-  </div>
-
-
-
-  <p>Your gift, no matter the size, will have an immediate impact. It is not just food; it is fuel for future pastors, evangelists, and servants of Christ. It's a tangible way to share the Gospel by providing for those who will carry it to others.</p>
-
-
-
-  <p>Will you consider skipping one snack, one coffee, or one meal to feed a student who hungers for both the Word and daily bread?</p>
-
-
-
-  <p><strong>Let’s not take our full plates for granted. Let’s share them.</strong></p>
-
-  <p><em>Give rice. Give hope. Feed the body that carries the Gospel.</em></p>
-
+  <p><strong>Let’s not take our full plates for granted. Let’s share them.</strong></p>
+  <p><em>Give rice. Give hope. Feed the body that carries the Gospel.</em></p>
 
   <div class="donation-container">
   <h2>Donate Now</h2>
   <label for="donation-amount"><strong>Enter your donation amount (minimum $5):</strong></label><br>
-  <input type="number" id="donation-amount" value="10.00" min="5" step="0.01">
+  <input type="number" id="donation-amount" value="10.00" min="5" step="1.00">
 </div>
 
 <div class="paypal-wrapper">
@@ -207,3 +184,4 @@
 
 
 </html>
+
