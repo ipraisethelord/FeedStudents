@@ -59,34 +59,35 @@
   </div>
 
   <!-- PayPal SDK and Button -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AS242uLSPOBFKpnRNCJbHl-71ARyAj9OWrUSljldaKa4LcXxhe-qLxFiX_47wCgLrx-Ja0kxXuwt99as&currency=USD"></script>
+ <script src="https://www.paypal.com/sdk/js?client-id=AS242uLSPOBFKpnRNCJbHl-71ARyAj9OWrUSljldaKa4LcXxhe-qLxFiX_47wCgLrx-Ja0kxXuwt99as&currency=USD"></script>
 <script>
   paypal.Buttons({
     style: {
       layout: 'vertical',
       color:  'gold',
       shape:  'rect',
-      label:  'donate'
+      label:  'donate',
+      tagline: false
+    },
+    onClick: function(data, actions) {
+      const amount = prompt("Enter your donation amount (minimum $5):", "10.00");
+      if (!amount || isNaN(amount) || parseFloat(amount) < 5) {
+        alert("Please enter a valid amount of $5 or more.");
+        return actions.reject();
+      }
+      // Store the valid amount for use in createOrder
+      data.customAmount = amount;
+      return actions.resolve();
     },
     createOrder: function(data, actions) {
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: '10.00' // Default amount
+            value: data.customAmount || '10.00'
           },
-          description: 'Rice Fund: Feed 20 future ministers for one day'
+          description: 'Rice Fund: Feed future ministers at SIBBC&S'
         }]
       });
-    },
-    onClick: function(data, actions) {
-      // Allow user to change amount before approval
-      return actions.order.patch([
-        {
-          op: "replace",
-          path: "/purchase_units/@reference_id=='default'/amount/value",
-          value: prompt("Enter donation amount (USD):", "10.00") || "10.00"
-        }
-      ]);
     },
     onApprove: function(data, actions) {
       return actions.order.capture().then(function(details) {
@@ -99,3 +100,4 @@
 </body>
 
 </html>
+
