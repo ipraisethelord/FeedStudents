@@ -64,14 +64,19 @@
     margin-top: 20px;
   }
 
-  #paypal-button-container {
-    width: 90%;
-    max-width: 600px;
-    margin-top: 20px;
-    transform: scale(1.4);
-    transform-origin: top center;
-  }
+#paypal-button-container {
+  width: 90%;
+  max-width: 600px;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
 
+}
+.paypal-button-container iframe {
+  transform: scale(1.2);
+  transform-origin: top center;
+}
   @media (min-width: 768px) and (orientation: landscape) {
     .donation-container input,
     #paypal-button-container {
@@ -112,15 +117,15 @@
   <p><strong>Let’s not take our full plates for granted. Let’s share them.</strong></p>
   <p><em>Give rice. Give hope. Feed the body that carries the Gospel.</em></p>
 
-  <div class="donation-container">
+  
+<div class="donation-container">
   <h2>Donate Now</h2>
   <label for="donation-amount"><strong>Enter your donation amount (minimum $5):</strong></label><br>
   <input type="number" id="donation-amount" value="10.00" min="5" step="1.00">
-</div>
 
-<div class="paypal-wrapper">
   <div id="paypal-button-container"></div>
 </div>
+
   <!-- PayPal SDK and Button -->
 
 <script src="https://www.paypal.com/sdk/js?client-id=AS242uLSPOBFKpnRNCJbHl-71ARyAj9OWrUSljldaKa4LcXxhe-qLxFiX_47wCgLrx-Ja0kxXuwt99as&currency=USD"></script>
@@ -193,3 +198,4 @@ paypal.Buttons({
 </body>
 
 </html>
+
