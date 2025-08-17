@@ -11,62 +11,81 @@
   <meta name="description" content="Support SIBBC&S students with daily rice. Just $4.65 feeds 20 future ministers. Your gift nourishes bodies and spirits.">
 
   <title>Feed the Future: Help Provide Rice for SIBBC&S Students</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 20px;
+    background-color: #fefefe;
+    color: #333;
+    line-height: 1.8;
+  }
 
-  <style>
+  h1 {
+    color: #6488ea !important;
+    border: 2px dashed red;
+    text-align: center;
+  }
 
-   body {
-  font-family: Arial, sans-serif;
-  font-size: 18px; /* Increased from default */
-  margin: 0;
-  padding: 20px;
-  background-color: #fefefe;
-  color: #333;
-  line-height: 1.8;
-}
+  .highlight {
+    background-color: #6488ea;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: none;
+  }
 
-    h1 {
-      color: #6488ea !important;
-      border: 2px dashed red;
-      text-align: center;
-    }
+  .highlight:hover {
+    background-color: #6488ea;
+    box-shadow: none;
+  }
 
-  .highlight {
-  background-color: #6488ea;
-  color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
+  .donate-section {
+    margin-top: 30px;
+    text-align: center;
+  }
 
-.highlight:hover {
-  background-color: #3f6fdc;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-.donate-section {
-  margin-top: 30px;
-  text-align: center;
-}
-    
-.donation-container {
-  text-align: center;
-  margin: 30px auto;
-}
-.donation-container input {
-  padding: 12px;
-  font-size: 18px;
-  width: 40%;
-  margin-top: 10px;
-}
-.paypal-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-#paypal-button-container {
-  transform: scale(1.4); /* Increase size by 20% */
-  transform-origin: top center;
-  margin-top: 20px;
-}
-  </style>
+  .donation-container {
+    text-align: center;
+    margin: 30px auto;
+  }
+
+  .donation-container input {
+    padding: 12px;
+    font-size: 18px;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 10px;
+  }
+
+  .paypal-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  #paypal-button-container {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+    transform: scale(1.4);
+    transform-origin: top center;
+  }
+
+  @media (min-width: 768px) and (orientation: landscape) {
+    .donation-container input,
+    #paypal-button-container {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .donation-container input,
+    #paypal-button-container {
+      width: 40%;
+    }
+  }
+</style>
 
 </head>
 
@@ -173,15 +192,4 @@ paypal.Buttons({
 
 </body>
 
-
-
 </html>
-
-
-
-
-
-
-
-
-
