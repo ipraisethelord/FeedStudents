@@ -15,9 +15,8 @@ Your gift nourishes both body and spirit. It’s not just food—it’s fuel for
 
 ## 🙌 How to Give
 
-Visit the live donation page here:  
-👉 [https://ipraisethelord.github.io/feedstudents/](https://ipraisethelord.github.io/feedstudents/)
-
+Visit the live donation page here:
+👉 [[https://ipraisethelord.github.io/feedstudents/](https://ipraisethelord.github.io/feedstudents/)]
 You’ll find a secure PayPal button and a heartfelt message about the students and their needs.
 
 ## ✝️ About the Ministry
